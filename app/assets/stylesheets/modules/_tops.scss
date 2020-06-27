@@ -1,0 +1,40 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+}
+
+.top-page {
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  .application__title {
+    height: 238px;
+    line-height: 238px;
+    font-size: 60px;
+  }
+  .login {
+    text-decoration: none;
+    &__link {
+      display: inline-block;
+      font-size: 20px;
+      color: orange;
+    }
+  }
+  .center-line {
+    display: inline-block;
+    font-size: 20px;
+    color: black;
+  }
+  .registration {
+    text-decoration: none;
+    &__link {
+      display: inline-block;
+      font-size: 20px;
+      color: green;
+    }
+  }
+}
