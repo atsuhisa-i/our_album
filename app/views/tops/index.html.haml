@@ -9,7 +9,7 @@
       = link_to destroy_user_session_path, method: :delete, class: "logout__link" do
         ログアウト
     .mypage
-      = link_to '#', class:"mypage__link" do
+      = link_to users_path, class:"mypage__link" do
         マイページにすすむ
   - else
     .login

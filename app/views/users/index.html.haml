@@ -1,0 +1,19 @@
+.user-mypage
+  = "#{current_user.name}さんのページ"
+
+.side-bar
+  .side-bar__menu
+    .side-bar__menu__account
+      = link_to '#', class: 'check__account' do
+        登録内容を確認する
+    .side-bar__menu__group-make
+      = link_to '#', class: 'group__make' do
+        グループを作る
+    .side-bar__menu__group-show
+      = link_to '#', class: 'group__show' do
+        グループ一覧
+
+.main-content
+  アルバム一覧
+  .album__display
+    

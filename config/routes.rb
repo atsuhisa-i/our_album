@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get "/users/sign_out", :to => "users/sessions#destroy"
   end
   
+  resources :users, only: [:index]
   root 'tops#index'
   # resources :tops, only: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
