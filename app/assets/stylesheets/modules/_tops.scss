@@ -16,25 +16,39 @@
     line-height: 238px;
     font-size: 60px;
   }
-  .login {
-    text-decoration: none;
+  .welcome__message {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .logout {
+    display: inline-block;
     &__link {
-      display: inline-block;
       font-size: 20px;
-      color: orange;
+      color: black;
+      text-decoration: none;
     }
   }
-  .center-line {
-    display: inline-block;
-    font-size: 20px;
-    color: black;
+  .login {
+    &__link {
+      font-size: 20px;
+      color: black;
+      text-decoration: none;
+    }
   }
   .registration {
-    text-decoration: none;
+    margin-top: 20px;
     &__link {
-      display: inline-block;
       font-size: 20px;
-      color: green;
+      color: red;
+      text-decoration: none;
+    }
+  }
+  .mypage {
+    margin-top: 20px;
+    &__link {
+      font-size: 20px;
+      color: red;
+      text-decoration: none;
     }
   }
 }

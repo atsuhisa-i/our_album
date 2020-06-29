@@ -1,11 +1,20 @@
 .top-page
   .application__title 
     OUR ALBUM
-  = link_to '#', class: "login" do
-    .login__link
-      ログイン 
-  .center-line
-    ｜
-  = link_to '#', class: "registration" do
-    .registration__link
-      新規登録をする
+
+  - if user_signed_in?
+    .welcome__message
+      = "ようこそ! #{current_user.name}さん"
+    .logout
+      = link_to destroy_user_session_path, method: :delete, class: "logout__link" do
+        ログアウト
+    .mypage
+      = link_to '#', class:"mypage__link" do
+        マイページにすすむ
+  - else
+    .login
+      = link_to new_user_session_path, class: "login__link" do
+        ログイン
+    .registration
+      = link_to new_user_registration_path, class: "registration__link" do
+        新規アカウントを登録をする
