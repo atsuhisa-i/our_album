@@ -13,6 +13,10 @@
   .main__menu__group-show
     = link_to '#', class: 'group__show' do
       グループ一覧
+  %p ｜
+  .main__menu__logout
+    = link_to destroy_user_session_path, method: :delete, class: 'logout__mypage' do
+      ログアウト
 .main-content
   アルバム一覧
   .album__display
