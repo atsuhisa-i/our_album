@@ -1,0 +1,14 @@
+.registered__content__title
+  登録内容の確認
+
+.registered__content
+  .registered__content__name
+    = "名前：#{current_user.name}"
+  .registered__content__email
+    = "email：#{current_user.email}"
+  .registered__content__password
+    = "password：新規登録時に設定された６桁"
+
+.link__mypage
+  = link_to users_path, class:"mypage_link" do
+    マイページに戻る

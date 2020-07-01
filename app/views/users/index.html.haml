@@ -3,7 +3,7 @@
 
 .main__menu
   .main__menu__account
-    = link_to '#', class: 'check__account' do
+    = link_to user_path(current_user.id), class: 'check__account' do
       登録内容を確認する
   %p ｜
   .main__menu__group-make
