@@ -1,0 +1,59 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-mypage {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.main__menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .main__menu__account {
+    font-size: 18px;
+    .check__account {
+    text-decoration: none;
+    color: black;
+    }
+  }
+  .main__menu__group-make {
+    font-size: 18px;
+    .group__make {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .main__menu__group-show {
+    font-size: 18px;
+    .group__show {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .main__menu__logout {
+    font-size: 18px;
+    .logout__mypage {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.main-content {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 25px;
+  
+  .album__display {
+    width: 70%;
+    height: 100vh;
+    margin: 0 auto;
+  }
+}

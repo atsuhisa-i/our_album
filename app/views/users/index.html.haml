@@ -1,0 +1,23 @@
+.user-mypage
+  = "#{current_user.name}さんのページ"
+
+.main__menu
+  .main__menu__account
+    = link_to '#', class: 'check__account' do
+      登録内容を確認する
+  %p ｜
+  .main__menu__group-make
+    = link_to '#', class: 'group__make' do
+      グループを作る
+  %p ｜
+  .main__menu__group-show
+    = link_to '#', class: 'group__show' do
+      グループ一覧
+  %p ｜
+  .main__menu__logout
+    = link_to destroy_user_session_path, method: :delete, class: 'logout__mypage' do
+      ログアウト
+.main-content
+  アルバム一覧
+  .album__display
+    
