@@ -1,0 +1,40 @@
+.registered__content__title {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.registered__content {
+  width: 27%;
+  margin: 0 auto;
+  vertical-align: left;
+  &__name {
+    height: 100%;
+    font-size: 20px;
+  }
+  &__email {
+    margin-top: 10px;
+    height: 100%;
+    font-size: 20px;
+  }
+  &__password {
+    margin-top: 10px;
+    height: 100%;
+    font-size: 20px;
+  }
+}
+
+.registered__content__link {
+  width: 27%;
+  height: 85px;
+  line-height: 85px;
+  margin: 0 auto;
+  text-align: center;
+  .mypage_link {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+  }
+}
