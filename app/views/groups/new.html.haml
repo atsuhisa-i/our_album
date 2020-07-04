@@ -1,2 +1,11 @@
 .new-group__title
   新規グループの作成
+
+= form_for(@group) do |f|
+  .new-group__form
+    .new-group__form__name
+      = f.text_field :name, placeholder: 'グループ名を記入してください', class: 'new-group__name'
+    .new-group__form__users
+      = f.collection_check_boxes :user_ids, User.all, :id, :name, class: 'new-group__users'
+    .new-group__form__submit
+      = f.submit value: '作成する', class: 'new-group__submit'
