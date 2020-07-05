@@ -9,3 +9,6 @@
       = f.collection_check_boxes :user_ids, User.all, :id, :name, class: 'new-group__users'
     .new-group__form__submit
       = f.submit value: '作成する', class: 'new-group__submit'
+    .new-group__form__link
+      = link_to users_path, class:"mypage_link" do
+        マイページに戻る
