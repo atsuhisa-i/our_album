@@ -16,5 +16,9 @@
 .main-content
   アルバム一覧
   .album__display
-    
-    
+    - current_user.groups.each do |group|
+      %ul.group__list
+        = link_to '#' do
+          %li.group__list__name
+            = group.name
+          %li.group__list__image
