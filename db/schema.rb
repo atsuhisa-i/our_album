@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_05_070155) do
+ActiveRecord::Schema.define(version: 2020_07_06_103309) do
+
+  create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "date"
+    t.index ["group_id"], name: "index_albums_on_group_id"
+    t.index ["user_id"], name: "index_albums_on_user_id"
+  end
 
   create_table "group_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "group_id"
-    t.bigint "user_id"
+    t.bigint "group_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_group_users_on_group_id"
@@ -28,16 +39,12 @@ ActiveRecord::Schema.define(version: 2020_07_05_070155) do
     t.index ["name"], name: "index_groups_on_name", unique: true
   end
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "picture", null: false
-    t.text "content"
-    t.bigint "user_id"
-    t.bigint "group_id"
+  create_table "pictures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
+    t.bigint "album_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "date"
-    t.index ["group_id"], name: "index_images_on_group_id"
-    t.index ["user_id"], name: "index_images_on_user_id"
+    t.index ["album_id"], name: "index_pictures_on_album_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,7 +61,8 @@ ActiveRecord::Schema.define(version: 2020_07_05_070155) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "albums", "groups"
+  add_foreign_key "albums", "users"
   add_foreign_key "group_users", "groups"
-  add_foreign_key "images", "groups"
-  add_foreign_key "images", "users"
+  add_foreign_key "pictures", "albums"
 end

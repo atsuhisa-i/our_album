@@ -1,8 +1,5 @@
-class ImagesController < ApplicationController
+class AlbumsController < ApplicationController
   before_action :set_group
-
-  def index
-    @images = @group.images.includes(:user)
 
   def new
     @image = Image.new
@@ -16,9 +13,6 @@ class ImagesController < ApplicationController
       flash.now[:alert] = '写真を登録してください'
       render :new
     end
-  end
-
-  def show
   end
 
   private
