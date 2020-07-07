@@ -14,6 +14,10 @@ def create
   end
 end
 
+def show
+  
+end
+
 private
 def group_params
   params.require(:group).permit(:name, user_ids: [])
