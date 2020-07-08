@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:index, :show]
-  resources :groups, only: [:new, :create]
+  resources :groups, only: [:new, :create, :show]
     resources :albums, only: [:new, :create]
   root 'tops#index'
   

@@ -1,0 +1,17 @@
+.group-page
+  = "#{@group.name}のページ"
+
+.make__new-album
+  = link_to '#', class: 'make__new-album__link' do
+    新しいアルバムを作る
+
+.display__albums-header
+  アルバム一覧
+  .display__albums-inner
+    - if @albums.present?
+      - @albums.each do |album|
+        .display__albums-content
+          = image_tag album.pictures[0].image.to_s, size: '220x150'
+    - else
+      .display__albums-blank
+        まだアルバムはありません
