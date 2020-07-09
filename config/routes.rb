@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:index, :show]
-  resources :groups, only: [:new, :create, :show]
+  resources :groups, only: [:new, :create, :show] do
     resources :albums, only: [:new, :create]
+  end
   root 'tops#index'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
