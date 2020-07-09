@@ -1,0 +1,67 @@
+.group-page {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 30px;
+}
+
+.group-page__member {
+  width: 100%;
+  text-align: center;
+}
+
+.group__menu {
+  display: flex;
+  justify-content: center;
+  .edit__group {
+    // width: 100%;
+    height: 50px;
+    line-height: 50px;
+    &__link {
+      font-size: 18px;
+      text-decoration: none;
+      color:black;
+    }
+  }
+  .partition {
+    height: 50px;
+    line-height: 50px;
+  }
+  .make__new-album {
+    // width: 100%;
+    height: 50px;
+    line-height: 50px;
+    &__link {
+      font-size: 18px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .return__mypage {
+    height: 50px;
+    line-height: 50px;
+    &__link {
+      font-size: 18px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.display__albums-header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.display__albums-inner {
+  width: 100%;
+  text-align: center;
+  &__blank {
+    font-size: 18px;
+  }
+}

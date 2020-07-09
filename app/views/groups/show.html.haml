@@ -1,0 +1,32 @@
+.group-page
+  = "#{@group.name}のページ"
+.group-page__member
+  Member :
+  - @group.users.each do |user|
+    = user.name
+
+.group__menu
+  .edit__group
+    = link_to '#', class: 'edit__group__link' do
+      グループを編集する
+  .partition
+    ｜
+  .make__new-album
+    = link_to '#', class: 'make__new-album__link' do
+      新しいアルバムを作る
+  .partition
+    ｜
+  .return__mypage
+    = link_to users_path, class:"return__mypage__link" do
+      マイページに戻る
+
+.display__albums-header
+  アルバム一覧
+.display__albums-inner
+  - if @albums.present?
+    .display__albums-content
+      - @albums.each do |album|
+        = image_tag album.pictures[0].image.to_s, size: '220x150'
+  - else
+    .display__albums-blank
+      まだアルバムはありません
