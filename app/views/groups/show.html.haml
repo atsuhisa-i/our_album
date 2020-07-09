@@ -7,11 +7,11 @@
 
 .display__albums-header
   アルバム一覧
-  .display__albums-inner
-    - if @albums.present?
+.display__albums-inner
+  - if @albums.present?
+    .display__albums-content
       - @albums.each do |album|
-        .display__albums-content
-          = image_tag album.pictures[0].image.to_s, size: '220x150'
-    - else
-      .display__albums-blank
-        まだアルバムはありません
+        = image_tag album.pictures[0].image.to_s, size: '220x150'
+  - else
+    .display__albums-blank
+      まだアルバムはありません
