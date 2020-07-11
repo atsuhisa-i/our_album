@@ -1,0 +1,51 @@
+.make__album-header
+  アルバムを作る
+  
+= form_for [@group, @album], url: group_albums_path do |f|
+  .new-album__form
+    .new-album__form__title
+      %label.title__label
+        タイトル
+      %span.required
+        必須
+    .title__content
+      = f.text_field :title, id: 'title', placeholder: "アルバムのタイトル（５0文字以内）"
+    %hr.style__line
+    .new-album__form__pictures
+      %label.pictures__label
+        写真を保存する
+      %span.required
+        必須
+    .files__content
+      #previews
+        %label
+          #files__content__form
+            = f.fields_for :pictures do |picture|
+              .js-file_group{ "data-index": "#{ picture.index }"}
+                = picture.file_field :image, class: 'file__upload'
+              .picture__icon
+                = icon("fa", "camera")
+              %p.how__to__upload
+                クリックしてファイルをアップロード
+    %hr.style__line
+    .new-album__form__date
+      %label.date__label
+        日付
+      %span.required
+        必須
+    .date__content
+      != sprintf(f.date_select( :date, use_month_numbers: true, date_separator:'%s'), '年', '月') + '日'
+              
+    %hr.style__line
+    .new-album__form__content
+      %label.explanation__label 
+        コメント
+      %span.not-required
+        任意
+    .explanation__content
+      = f.text_area :content, id: 'content', size: "40x25", placeholder: "写真へのコメント（1,000文字以内）"
+    .new-album__form__submit
+      = f.submit "保存する", id: 'submit__album'
+    .return__group-page
+      = link_to group_path(@group), class:"return__group-page__link" do
+        グループページに戻る

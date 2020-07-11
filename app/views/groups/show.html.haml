@@ -12,7 +12,7 @@
   .partition
     ｜
   .make__new-album
-    = link_to '#', class: 'make__new-album__link' do
+    = link_to new_group_album_path(@group), class: 'make__new-album__link' do
       新しいアルバムを作る
   .partition
     ｜
@@ -26,6 +26,7 @@
   - if @albums.present?
     .display__albums-content
       - @albums.each do |album|
+        = album.title
         = image_tag album.pictures[0].image.to_s, size: '220x150'
   - else
     .display__albums-blank

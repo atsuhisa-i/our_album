@@ -2,22 +2,24 @@ class AlbumsController < ApplicationController
   before_action :set_group
 
   def new
-    @image = Image.new
+    @album = Album.new
+    @album.pictures.build
   end
 
   def create
-    @imege = @group.images.new(image_params)
-    if @image.save
-      redirect_to users_path
+    @album = @group.albums.new(album_params)
+    if @album.save
+      redirect_to group_path(@group)
     else
       flash.now[:alert] = '写真を登録してください'
-      render :new
+      @album.pictures.build
+      redirect_to new_album_path
     end
   end
 
-  private
-  def image_params
-    params.require(:image).permit(:picture, :content, :date).merge(user_id: current_user.id)
+private
+  def album_params
+    params.require(:album).permit(:content, :date, pictures_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_group
