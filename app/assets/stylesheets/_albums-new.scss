@@ -13,6 +13,38 @@
   border-width: 1px;
   border: solid 1px rgb(204, 204, 204);
   border-radius: 5px;
+  .new-album__form__title {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+    .title__label {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .required {
+      font-size: 12px;
+      background-color: red;
+      color: #fff;
+      padding: 0 4px;
+      display: inline-block;
+      line-height: 1.4em;
+      font-weight: 600;
+      border-radius: 2px;
+      margin-left: 8px;
+    }
+  }
+  .title__content {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    #title {
+      width: 50%;
+      height: 40px;
+      border: solid 1.2px rgb(204, 204, 204);
+      background-color: rgb(245, 245, 245);
+      font-size: 14px;
+    }
+  }
   .new-album__form__pictures {
     width: 80%;
     margin: 0 auto;
@@ -108,9 +140,9 @@
       font-size: 16px;
       font-weight: bold;
     }
-    .required {
+    .not-required {
       font-size: 12px;
-      background-color: red;
+      background-color: rgb(177, 174, 174);
       color: #fff;
       padding: 0 4px;
       display: inline-block;
@@ -145,6 +177,19 @@
       background-color: rgb(255, 223, 223);
       border-radius: 5px;
       font-weight: bold;
+      cursor: pointer;
+    }
+  }
+  .return__group-page {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: center;
+    cursor: pointer;
+    &__link {
+      text-decoration: none;
+      color: black;
     }
   }
 }

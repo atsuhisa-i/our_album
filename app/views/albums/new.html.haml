@@ -3,6 +3,14 @@
   
 = form_for [@group, @album], url: group_albums_path do |f|
   .new-album__form
+    .new-album__form__title
+      %label.title__label
+        タイトル
+      %span.required
+        必須
+    .title__content
+      = f.text_field :title, id: 'title', placeholder: "アルバムのタイトル（５0文字以内）"
+    %hr.style__line
     .new-album__form__pictures
       %label.pictures__label
         写真を保存する
@@ -32,9 +40,12 @@
     .new-album__form__content
       %label.explanation__label 
         コメント
-      %span.required
-        必須
+      %span.not-required
+        任意
     .explanation__content
-      = f.text_area :content, id: 'content', size: "40x25", placeholder: "写真へのコメント（必須 1,000文字以内）"
+      = f.text_area :content, id: 'content', size: "40x25", placeholder: "写真へのコメント（1,000文字以内）"
     .new-album__form__submit
       = f.submit "保存する", id: 'submit__album'
+    .return__group-page
+      = link_to group_path(@group), class:"return__group-page__link" do
+        グループページに戻る

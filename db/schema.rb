@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_103309) do
+ActiveRecord::Schema.define(version: 2020_07_11_071135) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_103309) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "date"
+    t.string "title", null: false
     t.index ["group_id"], name: "index_albums_on_group_id"
     t.index ["user_id"], name: "index_albums_on_user_id"
   end

@@ -26,6 +26,7 @@
   - if @albums.present?
     .display__albums-content
       - @albums.each do |album|
+        = album.title
         = image_tag album.pictures[0].image.to_s, size: '220x150'
   - else
     .display__albums-blank

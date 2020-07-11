@@ -9,7 +9,7 @@ class AlbumsController < ApplicationController
   def create
     @album = @group.albums.new(album_params)
     if @album.save
-      redirect_to group_path
+      redirect_to group_path(@group)
     else
       flash.now[:alert] = '写真を登録してください'
       @album.pictures.build
