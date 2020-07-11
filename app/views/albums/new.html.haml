@@ -1,3 +1,37 @@
 .make__album-header
   アルバムを作る
   
+= form_for [@group, @album], url: group_albums_path do |f|
+  .new-album__form
+    .new-album__form__pictures
+      %label.pictures__label
+        写真を保存する
+      %span.required
+        必須
+    .files__content
+      #previews
+        %label
+          #files__content__form
+            = f.fields_for :pictures do |picture|
+              .js-file_group{ "data-index": "#{ picture.index }"}
+                = picture.file_field :image, class: 'file__upload'
+                = icon("fa", "camera")
+              %p.how__to__upload
+                クリックしてファイルをアップロード
+    %hr.style__line
+    .new-album__form__date
+      %label.date__label
+        日付
+      %span.required
+        必須
+    .date__content
+      = f.date_select :date, id: 'date'
+    %hr.style__line
+    .new-album__form__content
+      %label.explanation__label 
+        コメント
+      %span.required
+        必須
+    .explanation__content
+      = f.text_area :content, id: 'content', size: "40x25", placeholder: "写真へのコメント（必須 1,000文字以内）"
+    %hr.style__line
