@@ -132,6 +132,21 @@
       background-color: rgb(245, 245, 245);
     }
   }
+  .new-album__form__submit {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: center;
+    #submit__album {
+      width: 150px;
+      height: 40px;
+      border: solid 1.2px rgb(252, 119, 119);
+      background-color: rgb(255, 223, 223);
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  }
 }
 
 .style__line {

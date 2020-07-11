@@ -36,3 +36,5 @@
         必須
     .explanation__content
       = f.text_area :content, id: 'content', size: "40x25", placeholder: "写真へのコメント（必須 1,000文字以内）"
+    .new-album__form__submit
+      = f.submit "保存する", id: 'submit__album'
