@@ -1,0 +1,143 @@
+.make__album-header {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 100px;
+}
+
+.new-album__form {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  border-width: 1px;
+  border: solid 1px rgb(204, 204, 204);
+  border-radius: 5px;
+  .new-album__form__pictures {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+    .pictures__label {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .required {
+      font-size: 12px;
+      background-color: red;
+      color: #fff;
+      padding: 0 4px;
+      display: inline-block;
+      line-height: 1.4em;
+      font-weight: 600;
+      border-radius: 2px;
+      margin-left: 8px;
+    }
+  }
+  .files__content {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    #files__content__form {
+      text-align: center;
+      height:  150px;
+      border-style: dashed;
+      border-width: 1px;
+      border-color: rgb(204, 204, 204);
+      background-color: rgb(245, 245, 245);
+      cursor: pointer;
+      .file__upload {
+        cursor: pointer;
+        display: none;
+      }
+      .fa {
+        cursor: pointer;
+        font-size: 22px;
+        margin-bottom: 8px;
+        margin-top: 40px;
+      }
+      .how__to__upload {
+        font-size: 12px;
+      }
+    }
+  }
+  .new-album__form__date {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    .date__label {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .required {
+      font-size: 12px;
+      background-color: red;
+      color: #fff;
+      padding: 0 4px;
+      display: inline-block;
+      line-height: 1.4em;
+      font-weight: 600;
+      border-radius: 2px;
+      margin-left: 8px;
+    }
+  }
+  .date__content {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    #album_date_1i {
+      height: 30px;
+      background-color: rgb(245, 245, 245);
+      border: solid 1.2px rgb(204, 204, 204);
+    }
+    #album_date_2i {
+      height: 30px;
+      background-color: rgb(245, 245, 245);
+      border: solid 1.2px rgb(204, 204, 204);
+    }
+    #album_date_3i {
+      height: 30px;
+      background-color: rgb(245, 245, 245);
+      border: solid 1.2px rgb(204, 204, 204);
+    }
+  }
+  .new-album__form__content {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    .explanation__label {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .required {
+      font-size: 12px;
+      background-color: red;
+      color: #fff;
+      padding: 0 4px;
+      display: inline-block;
+      line-height: 1.4em;
+      font-weight: 600;
+      border-radius: 2px;
+      margin-left: 8px;
+    }
+  }
+  .explanation__content {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    #content {
+      width: 100%;
+      height: 300px;
+      border: solid 1.2px rgb(204, 204, 204);
+      background-color: rgb(245, 245, 245);
+    }
+  }
+}
+
+.style__line {
+  width: 80%;
+  border-top-color: #efefef;
+  border-top-style: solid;
+  border-bottom: 0 solid;
+  margin-top: 20px;
+}

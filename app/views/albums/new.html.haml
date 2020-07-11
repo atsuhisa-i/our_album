@@ -15,6 +15,7 @@
             = f.fields_for :pictures do |picture|
               .js-file_group{ "data-index": "#{ picture.index }"}
                 = picture.file_field :image, class: 'file__upload'
+              .picture__icon
                 = icon("fa", "camera")
               %p.how__to__upload
                 クリックしてファイルをアップロード
@@ -25,7 +26,8 @@
       %span.required
         必須
     .date__content
-      = f.date_select :date, id: 'date'
+      != sprintf(f.date_select( :date, use_month_numbers: true, date_separator:'%s'), '年', '月') + '日'
+              
     %hr.style__line
     .new-album__form__content
       %label.explanation__label 
@@ -34,4 +36,3 @@
         必須
     .explanation__content
       = f.text_area :content, id: 'content', size: "40x25", placeholder: "写真へのコメント（必須 1,000文字以内）"
-    %hr.style__line
