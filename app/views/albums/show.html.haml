@@ -1,0 +1,11 @@
+.album__title
+  = @album.title
+
+.album__date
+  = @album.date
+
+.album__pictures
+  - objects = @album.pictures
+  - objects.each do |object|
+    %li.list
+      = image_tag object.image.url, class: "list__size"

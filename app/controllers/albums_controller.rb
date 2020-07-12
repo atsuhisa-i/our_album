@@ -13,13 +13,17 @@ class AlbumsController < ApplicationController
     else
       flash.now[:alert] = '写真を登録してください'
       @album.pictures.build
-      redirect_to new_album_path
+      redirect_to new_group_album_path
     end
+  end
+
+  def show
+    @album = Album.find(params[:id])
   end
 
 private
   def album_params
-    params.require(:album).permit(:content, :date, pictures_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:album).permit(:title, :content, :date, pictures_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_group

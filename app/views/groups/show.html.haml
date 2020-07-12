@@ -26,8 +26,10 @@
   - if @albums.present?
     .display__albums-content
       - @albums.each do |album|
-        = album.title
-        = image_tag album.pictures[0].image.to_s, size: '220x150'
+        = link_to group_album_path(@group, album.id) do
+          = album.title
+          = album.date
+          = image_tag album.pictures[0].image.to_s, size: '220x150'
   - else
     .display__albums-blank
       まだアルバムはありません
