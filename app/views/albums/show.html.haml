@@ -1,6 +1,6 @@
 .album__detail
   .album__title
-    = "アルバムタイトル：#{@album.title}"
+    = "タイトル：#{@album.title}"
   .album__date
     = "日付：#{@album.date}"
   .album__pictures
@@ -9,7 +9,7 @@
       .list
         = image_tag object.image.url, class: "list__size"
   .album__explanation
-    アルバムへのコメント
+    コメント
     - if @album.content.present?
       .album__explanation__content
         = @album.content
