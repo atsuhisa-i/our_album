@@ -19,6 +19,12 @@ class GroupsController < ApplicationController
     @albums = Album.all.includes(:pictures).order('created_at DESC')
   end
 
+  def edit
+  end
+
+  def update
+  end
+
 private
 
   def group_params
