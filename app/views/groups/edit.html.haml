@@ -1,0 +1,17 @@
+.edit__group-header
+  グループの編集
+= form_for @group do |f|
+  .edit-group__form
+    .name__label
+      グループ名の変更
+    .edit-group__form__name
+      = f.text_field :name, class: 'edit-group__name', placeholder: 'グループを記入してください'
+    .member__label
+      メンバーの変更
+    .edit-group__form__members
+      = f.collection_check_boxes :user_ids, User.all, :id, :name, class: 'edit-group__users'
+    .edit-group__form__submit
+      = f.submit value:'更新する', class: 'edit-group__submit'
+    .edit-group__form__link
+      = link_to group_path, class:"group-page_link" do
+        グループページに戻る
