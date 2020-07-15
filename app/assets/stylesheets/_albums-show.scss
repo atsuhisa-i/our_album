@@ -30,27 +30,42 @@
     }
   }
 }
-.edit__album {
-  width: 70%;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 30px;
-  &__link {
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    cursor: pointer;
+.album__menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  .edit__album {
+    height: 50px;
+    line-height: 50px;
+    &__link {
+      text-decoration: none;
+      font-size: 16px;
+      color: black;
+      cursor: pointer;
+    }
   }
-}
-.return__group-page {
-  width: 70%;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 10px;
-  &__link {
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    cursor: pointer;
+  .delete__album {
+    height: 50px;
+    line-height: 50px;
+    &__link {
+      text-decoration: none;
+      font-size: 16px;
+      color: black;
+      cursor: pointer;
+    }
+  }
+  .return__group-page {
+    height: 50px;
+    line-height: 50px;
+    &__link {
+      text-decoration: none;
+      font-size: 16px;
+      color: black;
+      cursor: pointer;
+    }
+  }
+  .partition {
+    height: 50px;
+    line-height: 50px;
   }
 }

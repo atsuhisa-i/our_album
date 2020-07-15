@@ -16,9 +16,17 @@
     - else
       .album__explanation__blank
         コメントはありません。
-.edit__album
-  = link_to '#', class: 'edit__album__link' do
-    アルバムを編集する
-.return__group-page
-  = link_to group_path(@group), class:"return__group-page__link" do
-    グループページに戻る
+.album__menu
+  .edit__album
+    = link_to '#', class: 'edit__album__link' do
+      アルバムを編集する
+  .partition
+    ｜
+  .delete__album
+    = link_to group_album_path(@album.id), class: "delete__album__link", method: :delete, data: {confirm: "本当に削除しますか？"} do
+      アルバムを削除する
+  .partition
+    ｜
+  .return__group-page
+    = link_to group_path(@group), class:"return__group-page__link" do
+      グループページに戻る
