@@ -24,7 +24,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album = Album.find(params[:id])
     @album.destroy
-    redirect_to group_path
+    redirect_to group_path(@group)
   end
 
 private
