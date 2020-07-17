@@ -7,7 +7,7 @@
 }
 
 .registered__content {
-  width: 27%;
+  width: 30%;
   margin: 0 auto;
   vertical-align: left;
   &__name {
@@ -36,5 +36,12 @@
     text-decoration: none;
     font-size: 18px;
     color: black;
+    .btn__mypage_link {
+      width: 150px;
+      background-color: #fddddd;
+      border-radius: 4px;
+      border-style: solid;
+      cursor: pointer;
+    }
   }
 }
