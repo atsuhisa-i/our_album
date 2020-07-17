@@ -1,9 +1,49 @@
+.album__menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  .edit__album {
+    height: 50px;
+    line-height: 50px;
+    .btn__edit__album {
+      width: 150px;
+      background-color: #fddddd;
+      border-radius: 4px;
+      border-style: solid;
+      cursor: pointer;
+    }
+  }
+  .delete__album {
+    height: 50px;
+    line-height: 50px;
+    margin-left: 10px;
+    .btn__delete__album {
+      width: 150px;
+      background-color: #fddddd;
+      border-radius: 4px;
+      border-style: solid;
+      cursor: pointer;
+    }
+  }
+  .return__group-page {
+    height: 50px;
+    line-height: 50px;
+    margin-left: 10px;
+    .btn__return__group-page {
+      width: 150px;
+      background-color: #fddddd;
+      border-radius: 4px;
+      border-style: solid;
+      cursor: pointer;
+    }
+  }
+}
 .album__detail {
   width: 70%;
   margin: 0 auto;
   text-align: center;
   .album__title {
-    font-size: 30px;
+    font-size: 20px;
   }
   .album__date {
     font-size: 20px;
@@ -28,29 +68,5 @@
     &__blank {
       font-size: 18px;
     }
-  }
-}
-.edit__album {
-  width: 70%;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 30px;
-  &__link {
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    cursor: pointer;
-  }
-}
-.return__group-page {
-  width: 70%;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 10px;
-  &__link {
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    cursor: pointer;
   }
 }

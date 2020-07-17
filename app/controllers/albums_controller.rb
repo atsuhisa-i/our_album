@@ -21,6 +21,12 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
   end
 
+  def destroy
+    @album = Album.find(params[:id])
+    @album.destroy
+    redirect_to group_path(@group)
+  end
+
 private
   def album_params
     params.require(:album).permit(:title, :content, :date, pictures_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
