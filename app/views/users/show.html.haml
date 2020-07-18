@@ -1,6 +1,14 @@
 .registered__content__title
   登録内容の確認
-
+.user-page__link
+  .edit__registered__content__link
+    = link_to '#', class: "edit__content__link" do
+      %button.btn__edit__content__link
+        登録内容を変更する
+  .registered__content__link
+    = link_to users_path, class:"mypage_link" do
+      %button.btn__mypage_link
+        マイページに戻る
 .registered__content
   .registered__content__name
     = "名前：#{current_user.name}"
@@ -8,8 +16,3 @@
     = "email：#{current_user.email}"
   .registered__content__password
     = "password：新規登録時に設定された６桁"
-
-.registered__content__link
-  = link_to users_path, class:"mypage_link" do
-    %button.btn__mypage_link
-      マイページに戻る

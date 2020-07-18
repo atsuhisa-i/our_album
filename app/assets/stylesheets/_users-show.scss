@@ -6,10 +6,49 @@
   font-size: 30px;
 }
 
+.user-page__link {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  .edit__registered__content__link {
+    margin: 0 auto;
+    display: inline-block;
+    .edit__content__link {
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      .btn__edit__content__link {
+        width: 150px;
+        background-color: #fddddd;
+        border-radius: 4px;
+        border-style: solid;
+        cursor: pointer;
+      }
+    }
+  }
+  .registered__content__link {
+    margin: 0 auto;
+    display: inline-block;
+    .mypage_link {
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      .btn__mypage_link {
+        width: 150px;
+        background-color: #fddddd;
+        border-radius: 4px;
+        border-style: solid;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 .registered__content {
   width: 30%;
   margin: 0 auto;
   vertical-align: left;
+  margin-top: 30px;
   &__name {
     height: 100%;
     font-size: 20px;
@@ -23,25 +62,5 @@
     margin-top: 10px;
     height: 100%;
     font-size: 20px;
-  }
-}
-
-.registered__content__link {
-  width: 27%;
-  height: 85px;
-  line-height: 85px;
-  margin: 0 auto;
-  text-align: center;
-  .mypage_link {
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    .btn__mypage_link {
-      width: 150px;
-      background-color: #fddddd;
-      border-radius: 4px;
-      border-style: solid;
-      cursor: pointer;
-    }
   }
 }
