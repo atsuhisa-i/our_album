@@ -1,21 +1,25 @@
-%h2 Log in
+.login__header
+  ログイン
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name, autofocus: true
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
+  .login__form
     .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "users/shared/links"
+      = f.label :name
+      %br/
+      = f.text_field :name, autofocus: true, class: "login__name"
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "login__email"
+    .field
+      = f.label :password
+      %br/
+      = f.password_field :password, autocomplete: "current-password", class: "login__password"
+    .actions
+      = f.submit "ログイン", class: "login__submit"
+  .various__links
+    .new__registration__link
+      = link_to "新規登録する", new_user_registration_path, class: "new__registration"
+    .break
+      ｜
+    .top-page__link
+      = link_to "トップページに戻る", root_path, class: "top-page"
