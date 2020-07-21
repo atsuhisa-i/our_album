@@ -30,17 +30,35 @@
   }
   .login {
     &__link {
-      font-size: 20px;
-      color: black;
-      text-decoration: none;
+      .btn__login {
+        width: 300px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 20px;
+        border: solid 1.2px rgb(252, 119, 119);
+        background-color: rgb(255, 223, 223);
+        border-radius: 5px;
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+      }
     }
   }
   .registration {
     margin-top: 20px;
     &__link {
-      font-size: 20px;
-      color: red;
-      text-decoration: none;
+      .btn__new__registration {
+        width: 300px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 20px;
+        border: solid 1.2px rgb(252, 119, 119);
+        background-color: rgb(255, 223, 223);
+        border-radius: 5px;
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+      }
     }
   }
   .mypage {

@@ -14,7 +14,9 @@
   - else
     .login
       = link_to new_user_session_path, class: "login__link" do
-        ログイン
+        %button.btn__login
+          ログイン
     .registration
       = link_to new_user_registration_path, class: "registration__link" do
-        新規アカウントを登録をする
+        %button.btn__new__registration
+          新規アカウント登録

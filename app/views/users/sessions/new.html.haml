@@ -3,7 +3,7 @@
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .login__form
     .field
-      = f.label :name
+      = f.label :ニックネーム
       %br/
       = f.text_field :name, autofocus: true, class: "login__name"
     .field
@@ -11,7 +11,7 @@
       %br/
       = f.email_field :email, autofocus: true, autocomplete: "email", class: "login__email"
     .field
-      = f.label :password
+      = f.label :パスワード
       %br/
       = f.password_field :password, autocomplete: "current-password", class: "login__password"
     .actions
