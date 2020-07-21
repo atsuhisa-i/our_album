@@ -5,12 +5,14 @@
   - if user_signed_in?
     .welcome__message
       = "ようこそ! #{current_user.name}さん"
-    .logout
-      = link_to destroy_user_session_path, method: :delete, class: "logout__link" do
-        ログアウト
     .mypage
       = link_to users_path, class:"mypage__link" do
-        マイページにすすむ
+        %button.btn__mypage
+          マイページにすすむ
+    .logout
+      = link_to destroy_user_session_path, method: :delete, class: "logout__link" do
+        %button.btn__logout
+          ログアウト
   - else
     .login
       = link_to new_user_session_path, class: "login__link" do
