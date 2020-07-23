@@ -4,7 +4,7 @@
   = render "users/shared/error_messages", resource: resource
   .registration__form
     .field
-      = f.label :name
+      = f.label :ニックネーム
       %span.required
         必須
       %br/
@@ -16,16 +16,16 @@
       %br/
       = f.email_field :email, autofocus: true, autocomplete: "email", class: "registration__email"
     .field
-      = f.label :password
+      = f.label :パスワード
       %span.required
         必須
       - if @minimum_password_length
         %em
-          (#{@minimum_password_length} characters minimum)
+          (#{@minimum_password_length} 文字以上)
       %br/
       = f.password_field :password, autocomplete: "new-password", class: "registration__password"
     .field
-      = f.label :password_confirmation
+      = f.label :パスワードの確認
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password", class: "registration__password_confirmation"
     .actions

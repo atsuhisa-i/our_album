@@ -23,12 +23,15 @@
   アルバム一覧
 .display__albums-inner
   - if @albums.present?
-    .display__albums-content
-      - @albums.each do |album|
-        = link_to group_album_path(@group, album.id) do
-          = album.title
-          = album.date
-          = image_tag album.pictures[0].image.to_s, size: '220x150'
+    - @albums.each do |album|
+      .display__albums-content
+        = link_to group_album_path(@group, album.id), class: "album-content" do
+          .album__picture
+            = image_tag album.pictures[0].image.to_s, size: '220x150'
+          .album__title
+            = "タイトル：#{album.title}"
+          .album__date
+            = "日付：#{album.date}"
   - else
     .display__albums-blank
       まだアルバムはありません
