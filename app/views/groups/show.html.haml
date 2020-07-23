@@ -21,6 +21,12 @@
 
 .display__albums-header
   アルバム一覧
+.albums-search
+  .albums-search__label
+    登録したアルバムを検索する
+  .albums-search__field
+    %input#albums-search{:placeholder => "検索したいアルバムタイトルを入力してください", :type => "text"}
+  .albums-search__result
 .display__albums-inner
   - if @albums.present?
     - @albums.each do |album|
