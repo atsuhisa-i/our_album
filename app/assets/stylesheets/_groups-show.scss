@@ -80,9 +80,19 @@
 }
 
 .display__albums-inner {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   text-align: center;
-  &__blank {
+  display: flex;
+  justify-content: center;
+  .display__albums-content {
+    margin-left: 5px;
+    .album-content {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .display__albums-blank {
     font-size: 18px;
   }
 }
