@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   def index
-    @albums = Album.serch(params[:keyword])
+    return nil if params[:keyword] == ""
+    @albums = Album.where(['title LIKE ?', "%#{params[:keyword]}%"] )
     respond_to do |format|
       format.html
       format.json { render json: @albums.to_json(:include => [:pictures]) }
