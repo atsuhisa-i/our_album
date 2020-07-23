@@ -1,4 +1,12 @@
 class GroupsController < ApplicationController
+  def index
+    @albums = Album.serch(params[:keyword])
+    respond_to do |format|
+      format.html
+      format.json { render json: @albums.to_json(:include => [:pictures]) }
+    end
+  end
+
 
   def new
     @group = Group.new
