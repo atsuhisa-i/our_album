@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   def index
     # @group = Group.find(params[:id])
-    return nil if params[:keyword] == ""
+    # return nil if params[:keyword] == ""
     @albums = Album.where(['title LIKE ?', "%#{params[:keyword]}%"] )
     respond_to do |format|
       format.html

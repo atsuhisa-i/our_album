@@ -1,6 +1,7 @@
 $(function() {
   function addAlbum(album) {
     let html = `
+    <a class="album-content" href="/groups/${album.group_id}/albums/${album.id}"><div class="album__picture">
       <div class="album__picture">
         <img src=${album.picture} width="220" height="150">
       </div>
@@ -10,6 +11,7 @@ $(function() {
       <div class="album__date">
         日付：${album.date}
       </div>
+    </a>
     `;
     $(".albums-search__result").append(html);
   }
@@ -23,8 +25,8 @@ $(function() {
     $(".albums-search__result").append(html);
   }
 
-  $("#albums-search").on("keyup", function() {
-    let input = $("#albums-search").val();
+  $(".albums-search").on("keyup", function() {
+    let input = $(".albums-search").val();
     $.ajax({
       type: "GET",
       url: "/groups",
@@ -32,13 +34,13 @@ $(function() {
       dataType: "json"
     })
       .done(function(albums) {
-        $(".albums-search__result").empty();
+        $(".display__albums-inner").empty();
         if (albums.length !== 0) {
           albums.forEach(function(album) {
             addAlbum(album);
           }); 
-        } else if (input.length == 0) {
-          return false;
+        // } else if (input.length == 0) {
+        //   return false;
         } else {
           addNoAlbum();
         }
