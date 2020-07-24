@@ -78,10 +78,22 @@
   text-align: center;
   font-size: 25px;
 }
+.albums-search {
+  width: 35%;
+  margin: 0 auto;
+  // text-align: center;
+  &__field {
+    .albums-search {
+      width: 90%;
+      text-align: center;
+    }
+  }
+}
 
 .display__albums-inner {
   width: 70%;
   margin: 0 auto;
+  margin-top: 30px;
   text-align: center;
   display: flex;
   justify-content: center;
