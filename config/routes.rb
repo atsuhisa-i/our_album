@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update]
   resources :groups, only: [:index, :new, :create, :show, :edit, :update] do
     resources :albums, only: [:new, :create, :show, :destroy]
+    member do
+      get 'search'
+    end
   end
   root 'tops#index'
   

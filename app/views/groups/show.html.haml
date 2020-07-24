@@ -21,16 +21,32 @@
 
 .display__albums-header
   アルバム一覧
-= form_with(url: groups_path,local: true, method: :get) do |f|
-  .albums-search
+.albums-search
+  = form_tag(search_group_path(@group, @serch_albums), :method => "get") do
     .albums-search__label
       登録したアルバムを検索する
     .albums-search__field
-      = f.text_field :keyword, placeholder: "検索したいアルバムタイトルを入力してください", class: "albums-search"
-      = f.submit "検索", class: "search-btn"
-    .albums-search__result
+      = text_field_tag :search, params[:search], placeholder: "検索したいアルバムタイトルを入力してください", class: "albums-search"
+      = submit_tag "検索", class: "search-btn"
+
 .display__albums-inner
+  -# - if @search_albums
+  -#   -# .search__albums__result
+  -#   - @search_albums.each do |album|
+  -#     .display__albums-content
+  -#       = link_to group_album_path(@group, album.id), class: "album-content" do
+  -#         .album__picture
+  -#           = image_tag album.pictures[0].image.to_s, size: '220x150'
+  -#         .album__title
+  -#           = "タイトル：#{album.title}"
+  -#         .album__date
+  -#           = "日付：#{album.date}"
+  -#   .return__group-page
+  -#     = link_to group_path, class:"return__group-page__link" do
+  -#       %button.btn__return__group-page
+  -#         グループページに戻る
   - if @albums.present?
+    -# .display__albums
     - @albums.each do |album|
       .display__albums-content
         = link_to group_album_path(@group, album.id), class: "album-content" do
