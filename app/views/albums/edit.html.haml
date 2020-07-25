@@ -1,7 +1,7 @@
 .make__album-header
   アルバムを編集する
   
-= form_for [@group, @album], url: group_albums_path do |f|
+= form_for [@group, @album], url: group_album_path(@group, @album.id), method: :patch do |f|
   .new-album__form
     .new-album__form__title
       %label.title__label
