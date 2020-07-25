@@ -18,15 +18,15 @@
         必須
     .files__content
       #previews
-        %label
-          #files__content__form
-            = f.fields_for :pictures do |picture|
-              .js-file_group{ "data-index": "#{ picture.index }"}
-                = picture.file_field :image, class: 'file__upload'
-              .picture__icon
-                = icon("fa", "camera")
-              %p.how__to__upload
-                クリックしてファイルをアップロード
+      %label
+        #files__content__form
+          = f.fields_for :pictures do |picture|
+            .js-file_group{ "data-index": "#{ picture.index }"}
+              = picture.file_field :image, class: 'file__upload'
+            .picture__icon
+              = icon("fa", "camera")
+            %p.how__to__upload
+              クリックしてファイルをアップロード
     %hr.style__line
     .new-album__form__date
       %label.date__label
