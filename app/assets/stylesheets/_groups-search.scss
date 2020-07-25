@@ -1,0 +1,18 @@
+.group__menu {
+  .return__group-page {
+    height: 50px;
+    line-height: 50px;
+    &__link {
+      font-size: 18px;
+      text-decoration: none;
+      color:black;
+      .btn__return__group-page {
+        width: 150px;
+        background-color: #fddddd;
+        border-radius: 4px;
+        border-style: solid;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.group-page
+  = "#{@group.name}のページ"
+.group-page__member
+  Member :
+  - @group.users.each do |user|
+    = user.name
+
+.group__menu
+  .return__group-page
+    = link_to group_path, class:"return__group-page__link" do
+      %button.btn__return__group-page
+        グループページに戻る
+
+.display__albums-header
+  検索結果
+.display__albums-inner
+  - @search_albums.each do |album|
+    .display__albums-content
+      = link_to group_album_path(@group, album.id), class: "album-content" do
+        .album__picture
+          = image_tag album.pictures[0].image.to_s, size: '220x150'
+        .album__title
+          = "タイトル：#{album.title}"
+        .album__date
+          = "日付：#{album.date}"
