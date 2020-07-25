@@ -27,7 +27,7 @@ class AlbumsController < ApplicationController
 
   def update
     @album = Album.find(params[:id])
-    if @item.update(item_params)
+    if @album.update(album_params)
       redirect_to root_path
     else
       render :edit

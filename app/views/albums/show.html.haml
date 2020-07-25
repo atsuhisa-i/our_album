@@ -1,6 +1,6 @@
 .album__menu
   .edit__album
-    = link_to '#', class: 'edit__album__link' do
+    = link_to edit_group_album_path(@group,@album.id), class: 'edit__album__link' do
       %button.btn__edit__album{:type => "button"}
         アルバムを編集する
   .delete__album
