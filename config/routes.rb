@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index, :show, :edit, :update]
   resources :groups, only: [:index, :new, :create, :show, :edit, :update] do
-    resources :albums, only: [:new, :create, :show, :destroy]
+    resources :albums, only: [:new, :create, :show, :edit, :update, :destroy]
     member do
       get 'search'
     end

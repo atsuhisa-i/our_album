@@ -1,0 +1,60 @@
+.make__album-header
+  アルバムを編集する
+  
+= form_for [@group, @album], url: group_album_path(@group, @album.id), method: :patch do |f|
+  .new-album__form
+    .new-album__form__title
+      %label.title__label
+        タイトル
+      %span.required
+        必須
+    .title__content
+      = f.text_field :title, id: 'title', placeholder: "アルバムのタイトル（５0文字以内）"
+    %hr.style__line
+    .new-album__form__pictures
+      %label.pictures__label
+        写真を保存する
+      %span.required
+        必須
+    .files__content__edit
+      #previews__edit
+        - @album.pictures.each_with_index do |picture, i|
+          #preview__edit
+            = image_tag picture.image.url, data: {index: i}, width:"100", height:"100"
+            .js-remove{"data-index": i}
+              削除
+      %label.change__form-id
+        #files__content__form__edit
+          = icon("fa", "camera")
+          %p.how__to__upload
+            クリックしてファイルをアップロード
+          = f.fields_for :pictures, @album.pictures do |picture|
+            .js-file_group_edit{ "data-index": "#{ picture.index }"}
+              = picture.file_field :image, class: 'file__upload__edit'
+            - if @album.persisted?
+              = picture.check_box :_destroy, data:{ index: picture.index }, class: 'hidden-destroy'
+          - if @album.persisted?
+            .js-file_group_edit{ "data-index": "#{ @album.pictures.count }"}
+              = file_field_tag :image, name: "album[pictures_attributes][#{@album.pictures.count }][image]", id: "album_pictures_attributes_#{@album.pictures.count }_image", class: 'file__upload__edit'
+    %hr.style__line
+    .new-album__form__date
+      %label.date__label
+        日付
+      %span.required
+        必須
+    .date__content
+      != sprintf(f.date_select( :date, use_month_numbers: true, date_separator:'%s'), '年', '月') + '日'
+              
+    %hr.style__line
+    .new-album__form__content
+      %label.explanation__label 
+        コメント
+      %span.not-required
+        任意
+    .explanation__content
+      = f.text_area :content, id: 'content', size: "40x25", placeholder: "写真へのコメント（1,000文字以内）"
+    .new-album__form__submit
+      = f.submit "保存する", id: 'submit__album'
+    .return__group-page
+      = link_to group_path(@group), class:"return__group-page__link" do
+        グループページに戻る
