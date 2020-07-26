@@ -1,14 +1,13 @@
 class GroupsController < ApplicationController
-  # def index
-  #   @group = Group.find(params[:id])
-  #   return nil if params[:keyword] == ""
-  #   @albums = Album.where(['title LIKE ?', "%#{params[:keyword]}%"] )
-  #   respond_to do |format|
-  #     format.html
-  #     format.json { render json: @albums.to_json(:include => [:pictures]) }
-  #   end
-  # end
 
+  def index
+    return nil if params[:keyword] == ""
+    @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"]).where.not(id: current_user.id).limit(10)
+    respond_to do |format|
+      format.html
+      format.json{ render 'index.json.jbuilder' }
+    end
+  end
 
   def new
     @group = Group.new
@@ -27,7 +26,6 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @albums = Album.all.includes(:pictures).order('created_at DESC')
-    # @search_albums = Album.all.includes(:pictures).search(params[:search])
   end
 
   def search
