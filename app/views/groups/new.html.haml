@@ -5,24 +5,22 @@
   .new-group__form
     .new-group__form__name
       = f.text_field :name, placeholder: 'グループ名を記入してください', class: 'new-group__name'
-    .new-group-form__field--left
-      %label.new-group-form__label{:for => "new_group_グループメンバーを追加"} グループメンバーを追加
-    .new-group-form__field--right
-      .new-group-form__search.clearfix
-        %input#user-search-field.new-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+    .new-group__form__field
+      %label.new-group__form__label{:for => "new_group_グループメンバーを追加"} グループメンバーを検索
+      .new-group__form__search
+        %input#user-search-field.new-group__form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
       #user-search-result
 
-  .new-group-form__field.clearfix
-    .new-group-form__field--left
+  .new-group__form
+    .new-group__form__field
       %label.new-group-form__label{:for => "new_group_グループメンバー"} グループメンバー
-    .new-group-form__field--right
       #new-group-users.js-add-user
-        .new-group-user.clearfix.js-chat-member#chat-group-user-8
+        .new-group-user.js-chat-member#chat-group-user
           %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
           %p.new-group-user__name= current_user.name
         - @group.users.each do |user|
           - if current_user.name != user.name
-            .new-group-user.clearfix.js-new-member
+            .new-group-user.js-new-member
               %input{name: "group[user_ids][]", type: "hidden", value: user.id}
               %p.new-group-user__name
                 = user.name 
