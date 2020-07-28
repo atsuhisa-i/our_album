@@ -25,12 +25,12 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @albums = Album.all.includes(:pictures).order('created_at DESC')
+    @albums = @group.albums.all.includes(:pictures).order('created_at DESC')
   end
 
   def search
     @group = Group.find(params[:id])
-    @search_albums = Album.all.includes(:pictures).search(params[:search])
+    @search_albums = @group.albums.all.includes(:pictures).search(params[:search])
   end
 
   def edit
