@@ -6,10 +6,27 @@
       グループ名の変更
     .edit-group__form__name
       = f.text_field :name, class: 'edit-group__name', placeholder: 'グループを記入してください'
-    .member__label
-      メンバーの変更
-    .edit-group__form__members
-      = f.collection_check_boxes :user_ids, User.all, :id, :name, class: 'edit-group__users'
+      = f.hidden_field :id, class: "chat__group_id", value: @group.id
+    .new-group__form__field
+      %label.new-group__form__label{:for => "new_group_グループメンバーを追加"} グループメンバーを検索
+      .new-group__form__search
+        %input#user-search-field.new-group__form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+      #user-search-result
+  .new-group__form
+    .new-group__form__field
+      %label.new-group-form__label{:for => "new_group_グループメンバー"} グループメンバー
+      #new-group-users.js-add-user
+        .new-group-user.js-chat-member#chat-group-user
+          %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
+          %p.new-group-user__name= current_user.name
+        - @group.users.each do |user|
+          - if current_user.name != user.name
+            .new-group-user.js-new-member
+              %input{name: "group[user_ids][]", type: "hidden", value: user.id}
+              %p.new-group-user__name
+                = user.name 
+              %a.user-search-remove.new-group-user__btn.new-group-user__btn--remove.js-remove-btn
+                削除
     .edit-group__form__submit
       = f.submit value:'更新する', class: 'edit-group__submit'
     .edit-group__form__link

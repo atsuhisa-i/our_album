@@ -1,8 +1,15 @@
 class GroupsController < ApplicationController
 
   def index
-    return nil if params[:keyword] == ""
-    @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"]).where.not(id: current_user.id).limit(10)
+    if params[:groupId].present? 
+      @group = Group.find(params[:groupId]) 
+      @ids = @group.users.ids 
+      return nil if params[:keyword] == ""
+      @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"]).where.not(id: current_user.id, id: @ids).limit(10)
+    else
+      return nil if params[:keyword] == ""
+      @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"]).where.not(id: current_user.id).limit(10)
+    end
     respond_to do |format|
       format.html
       format.json{ render 'index.json.jbuilder' }

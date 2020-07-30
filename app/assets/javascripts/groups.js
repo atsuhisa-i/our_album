@@ -33,10 +33,11 @@ $(function() {
 
   $(document).on("keyup", "#user-search-field", function() {
     let input = $("#user-search-field").val();
+    var group_id = $('.chat__group_id').val(); 
     $.ajax({
       type: "GET",
       url: "/groups",
-      data: { keyword: input },
+      data: { keyword: input, groupId: group_id },
       dataType: "json"
     })
       .done(function(users){
