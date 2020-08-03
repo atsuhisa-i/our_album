@@ -22,18 +22,18 @@
       = "ようこそ! #{current_user.name}さん"
     .mypage
       = link_to users_path, class:"mypage__link" do
-        %button.btn__mypage
+        %button.btn__mypage.solid
           マイページにすすむ
     .logout
       = link_to destroy_user_session_path, method: :delete, class: "logout__link" do
-        %button.btn__logout
+        %button.btn__logout.solid
           ログアウト
   - else
     .login
       = link_to new_user_session_path, class: "login__link" do
-        %button.btn__login
+        %button.btn__login.solid
           ログイン
     .registration
       = link_to new_user_registration_path, class: "registration__link" do
-        %button.btn__new__registration
+        %button.btn__new__registration.solid
           新規アカウント登録
