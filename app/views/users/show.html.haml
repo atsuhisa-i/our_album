@@ -3,11 +3,11 @@
 .user-page__link
   .edit__registered__content__link
     = link_to edit_user_path(current_user), class: "edit__content__link" do
-      %button.btn__edit__content__link
+      %button.btn__edit__content__link.solid
         登録内容を変更する
   .registered__content__link
     = link_to users_path, class:"mypage_link" do
-      %button.btn__mypage_link
+      %button.btn__mypage_link.solid
         マイページに戻る
 .registered__content
   .registered__content__name
