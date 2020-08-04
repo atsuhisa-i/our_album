@@ -8,15 +8,15 @@
 .group__menu
   .edit__group
     = link_to edit_group_path, class: 'edit__group__link' do
-      %button.btn__edit__group
+      %button.btn__edit__group.solid
         グループを編集する
   .make__new-album
     = link_to new_group_album_path(@group), class: 'make__new-album__link' do
-      %button.btn__make__new-album
+      %button.btn__make__new-album.solid
         新しいアルバムを作る
   .return__mypage
     = link_to users_path, class:"return__mypage__link" do
-      %button.btn__return__mypage
+      %button.btn__return__mypage.solid
         マイページに戻る
 
 .display__albums-header
@@ -27,7 +27,7 @@
       登録したアルバムを検索する
     .albums-search__field
       = text_field_tag :search, params[:search], placeholder: "検索したいアルバムタイトルを入力してください", class: "albums-search"
-      = submit_tag "検索", class: "search-btn"
+      = submit_tag "検索", class: "search-btn solid"
 
 .display__albums-inner
   - if @albums.present?
