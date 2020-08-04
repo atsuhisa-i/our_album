@@ -4,17 +4,17 @@
 .main__menu
   .main__menu__account
     = link_to user_path(current_user.id), class: 'check__account' do
-      %button.btn__check__account
+      %button.btn__check__account.solid
         登録内容を確認する
 
   .main__menu__group-make
     = link_to new_group_path, class: 'group__make' do
-      %button.btn__group__make
+      %button.btn__group__make.solid
         グループを作る
 
   .main__menu__logout
     = link_to destroy_user_session_path, method: :delete, class: 'logout__mypage' do
-      %button.btn__logout__mypage
+      %button.btn__logout__mypage.solid
         ログアウト
 .main-content
   グループ一覧

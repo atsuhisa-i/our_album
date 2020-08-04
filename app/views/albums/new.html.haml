@@ -45,7 +45,7 @@
     .explanation__content
       = f.text_area :content, id: 'content', size: "40x25", placeholder: "写真へのコメント（1,000文字以内）"
     .new-album__form__submit
-      = f.submit "保存する", id: 'submit__album'
+      = f.submit "保存する", class: 'submit__album solid'
     .return__group-page
       = link_to group_path(@group), class:"return__group-page__link" do
         グループページに戻る

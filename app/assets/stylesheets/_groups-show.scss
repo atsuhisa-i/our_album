@@ -28,6 +28,13 @@
         border-radius: 4px;
         border-style: solid;
         cursor: pointer;
+        &.solid {
+          box-shadow: 3px 3px 0 0 black;
+          &:hover {
+            transform: translate(3px, 3px);
+            box-shadow: none;
+          }
+        }
       }
     }
   }
@@ -49,6 +56,13 @@
         border-style: solid;
         cursor: pointer;
         margin-left: 5px;
+        &.solid {
+          box-shadow: 3px 3px 0 0 black;
+          &:hover {
+            transform: translate(3px, 3px);
+            box-shadow: none;
+          }
+        }
       }
     }
   }
@@ -66,6 +80,13 @@
         border-style: solid;
         cursor: pointer;
         margin-left: 5px;
+        &.solid {
+          box-shadow: 3px 3px 0 0 black;
+          &:hover {
+            transform: translate(3px, 3px);
+            box-shadow: none;
+          }
+        }
       }
     }
   }
@@ -85,6 +106,16 @@
     .albums-search {
       width: 90%;
       text-align: center;
+    }
+    .search-btn {
+      cursor: pointer;
+      &.solid {
+        box-shadow: 2px 2px 0 0 black;
+        &:hover {
+          transform: translate(2px, 2px);
+          box-shadow: none;
+        }
+      }
     }
   }
 }
