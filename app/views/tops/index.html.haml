@@ -19,7 +19,7 @@
 
   - if user_signed_in?
     .welcome__message
-      = "ようこそ! #{current_user.name}さん"
+      = "Welcome! #{current_user.name}"
     .mypage
       = link_to users_path, class:"mypage__link" do
         %button.btn__mypage.solid
