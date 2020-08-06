@@ -22,6 +22,9 @@
     width: 400px;
     margin: 0 auto;
     margin-top: 15px;
+    .new-group__form__label {
+      font-weight: bold;
+    }
     .new-group__form__search {
       width: 100%;
       .new-group__form__input {
@@ -43,12 +46,15 @@
   }
 }
 .new-group__form {
+  width: 40%;
+  margin: 0 auto;
   &__field {
     width: 400px;
     margin: 0 auto;
     margin-top: 15px;
     .new-group-form__label {
       font-size: 16px;
+      font-weight: bold;
     }
     .js-add-user {
       margin-top: 6px;
