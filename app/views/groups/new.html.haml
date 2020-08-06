@@ -1,8 +1,11 @@
 .new-group__title
-  新規グループの作成
+  .new-group__title__inner
+    New group
 
 = form_for(@group) do |f|
   .new-group__form
+    .new-name__label
+      グループ名
     .new-group__form__name
       = f.text_field :name, placeholder: 'グループ名を記入してください', class: 'new-group__name'
     .new-group__form__field
