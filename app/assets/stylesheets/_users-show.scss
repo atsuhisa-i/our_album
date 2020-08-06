@@ -3,7 +3,8 @@
   height: 100px;
   line-height: 100px;
   text-align: center;
-  font-size: 30px;
+  font-size: 35px;
+  font-family: 'Abril Fatface', cursive;
 }
 
 .user-page__link {
@@ -59,22 +60,25 @@
 }
 
 .registered__content {
-  width: 30%;
+  width: 400px;
   margin: 0 auto;
   vertical-align: left;
   margin-top: 30px;
   &__name {
     height: 100%;
     font-size: 20px;
+    width: 380px;
   }
   &__email {
     margin-top: 10px;
     height: 100%;
     font-size: 20px;
+    width: 380px;
   }
   &__password {
     margin-top: 10px;
     height: 100%;
     font-size: 20px;
+    width: 380px;
   }
 }

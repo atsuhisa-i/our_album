@@ -7,13 +7,23 @@
   height: 100px;
   line-height: 100px;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
+  font-family: 'Abril Fatface', cursive;
+}
+
+.account-content {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .main__menu {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 15px;
   .main__menu__account {
     font-size: 18px;
     .check__account {
@@ -83,20 +93,23 @@
 
 .main-content {
   width: 100%;
-  height: 100vh;
+  height: 100％;
   text-align: center;
   padding-top: 40px;
-  font-size: 25px;
-  
-  .group__display {
-    width: 70%;
-    height: 100vh;
-    margin: 0 auto;
-    .group__list {
-      &__link {
-        text-decoration: none;
-        color: black;
-      }
+  font-size: 30px;
+  font-family: 'Abril Fatface', cursive;
+}
+.group__display {
+  width: 40%;
+  height: 100％;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 15px;
+  .group__list {
+    &__link {
+      text-decoration: none;
+      color: black;
+      font-size: 25px;
     }
   }
 }

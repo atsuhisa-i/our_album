@@ -1,10 +1,17 @@
 .group-page {
   width: 100%;
   text-align: center;
-  font-size: 30px;
+  font-size: 35px;
   height: 50px;
   line-height: 50px;
   margin-top: 30px;
+  font-family: 'Abril Fatface', cursive;
+}
+
+.group-page__name {
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
 }
 
 .group-page__member {
@@ -97,10 +104,11 @@
   height: 70px;
   line-height: 70px;
   text-align: center;
-  font-size: 25px;
+  font-size: 30px;
+  font-family: 'Abril Fatface', cursive;
 }
 .albums-search {
-  width: 35%;
+  width: 450px;
   margin: 0 auto;
   &__field {
     .albums-search {

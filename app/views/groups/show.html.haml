@@ -1,5 +1,8 @@
 .group-page
-  = "#{@group.name}のページ"
+  Group page
+.group-page__name
+  Group name :
+  = "#{@group.name}"
 .group-page__member
   Member :
   - @group.users.each do |user|
@@ -20,7 +23,7 @@
         マイページに戻る
 
 .display__albums-header
-  アルバム一覧
+  Album list
 .albums-search
   = form_tag(search_group_path(@group, @serch_albums), :method => "get") do
     .albums-search__label

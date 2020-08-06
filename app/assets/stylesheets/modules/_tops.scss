@@ -15,6 +15,7 @@
     height: 238px;
     line-height: 238px;
     font-size: 40px;
+    font-family: 'Abril Fatface', cursive;
     &.inview2 {
       & .char {
         display: inline-block;
@@ -33,6 +34,7 @@
   .welcome__message {
     font-size: 25px;
     margin-bottom: 15px;
+    font-family: 'Abril Fatface', cursive;
   }
   .mypage {
     &__link {

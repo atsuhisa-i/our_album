@@ -1,12 +1,14 @@
 .edit__group-header
-  グループの編集
+  .edit__group-header__inner
+    Edit group
 = form_for @group do |f|
   .edit-group__form
-    .name__label
-      グループ名の変更
-    .edit-group__form__name
-      = f.text_field :name, class: 'edit-group__name', placeholder: 'グループを記入してください'
-      = f.hidden_field :id, class: "chat__group_id", value: @group.id
+    .name__form
+      .name__label
+        グループ名の変更
+      .edit-group__form__name
+        = f.text_field :name, class: 'edit-group__name', placeholder: 'グループを記入してください'
+        = f.hidden_field :id, class: "chat__group_id", value: @group.id
     .new-group__form__field
       %label.new-group__form__label{:for => "new_group_グループメンバーを追加"} グループメンバーを検索
       .new-group__form__search
