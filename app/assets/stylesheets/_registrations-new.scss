@@ -49,6 +49,13 @@
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
+      &.solid {
+        box-shadow: 3px 3px 0 0 black;
+        &:hover {
+          transform: translate(3px, 3px);
+          box-shadow: none;
+        }
+      }
     }
   }
 }
@@ -61,6 +68,9 @@
     .login {
       text-decoration: none;
       color: black;
+      &:hover {
+        color: red;
+      }
     }
   }
   .break {
@@ -71,6 +81,9 @@
     .top-page {
       text-decoration: none;
       color: black;
+      &:hover {
+        color: red;
+      }
     }
   }
 }
