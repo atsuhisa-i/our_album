@@ -29,7 +29,7 @@
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password", class: "registration__password_confirmation"
     .actions
-      = f.submit "登録する", class: "registration__submit"
+      = f.submit "登録する", class: "registration__submit solid"
   .various__links
     .login__link
       = link_to "登録済みユーザーでログイン", new_session_path(resource_name), class: "login"
