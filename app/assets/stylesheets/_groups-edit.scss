@@ -5,6 +5,7 @@
     width: 400px;
     height: 100px;
     text-align: center;
+    margin: 0 auto;
     font-size: 35px;
     line-height: 100px;
     font-family: 'Abril Fatface', cursive;
@@ -64,6 +65,9 @@
     .group-page_link {
       text-decoration: none;
       color: black;
+      &:hover {
+        color: red;
+      }
     }
   }
 }
