@@ -32,6 +32,16 @@
       = text_field_tag :search, params[:search], placeholder: "検索したいアルバムタイトルを入力してください", class: "albums-search"
       = submit_tag "検索", class: "search-btn solid"
 
+.swiper-container
+  .swiper-wrapper
+    .swiper-slide Slide 1
+    .swiper-slide Slide 2
+    .swiper-slide Slide 3
+  .swiper-pagination
+  .swiper-button-prev
+  .swiper-button-next
+  .swiper-scrollbar
+
 .display__albums-inner
   - if @albums.present?
     - @albums.each do |album|
