@@ -1,7 +1,7 @@
 $(function() {
   new Swiper('.swiper-container', {
   // Optional parameters
-    direction: 'vertical',
+    // direction: 'vertical',
     loop: true,
 
   // If we need pagination
