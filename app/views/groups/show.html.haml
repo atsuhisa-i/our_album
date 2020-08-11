@@ -32,25 +32,38 @@
       = text_field_tag :search, params[:search], placeholder: "検索したいアルバムタイトルを入力してください", class: "albums-search"
       = submit_tag "検索", class: "search-btn solid"
 
-.swiper-container
-  - if @albums.present?
+- if @albums.present?
+  .swiper-container.gallery-top
     .swiper-wrapper
       - @albums.each do |album|
         .swiper-slide
           = link_to group_album_path(@group, album.id), class: "album-content" do
             .album__picture.hover-darken.inview
-              = image_tag album.pictures[0].image.to_s, size: '220x150', class: "img-zoom"
+              = image_tag album.pictures[0].image.to_s, size: '600x400', class: "img-zoom"
             .album__title
               = "タイトル：#{album.title}"
             .album__date
               = "日付：#{album.date}"
-    .swiper-pagination
-    .swiper-button-prev
-    .swiper-button-next
-    .swiper-scrollbar
-  - else
-    .display__albums-blank
-      まだアルバムはありません
+    .swiper-button-next.swiper-button-white
+    .swiper-button-prev.swiper-button-white
+  .swiper-container.gallery-thumbs
+    .swiper-wrapper
+      - @albums.each do |album|
+        .swiper-slide
+          = link_to group_album_path(@group, album.id), class: "album-content" do
+            .album__picture
+              = image_tag album.pictures[0].image.to_s, size: '150x80', class: "img-zoom"
+            .album__title
+              = "タイトル：#{album.title}"
+            .album__date
+              = "日付：#{album.date}"
+    -# .swiper-pagination
+    -# .swiper-button-prev
+    -# .swiper-button-next
+    -# .swiper-scrollbar
+- else
+  .display__albums-blank
+    まだアルバムはありません
 
 -# .display__albums-inner
 -#   - if @albums.present?
