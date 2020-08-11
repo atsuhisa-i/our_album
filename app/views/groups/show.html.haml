@@ -38,16 +38,12 @@
       - @albums.each do |album|
         .swiper-slide
           = link_to group_album_path(@group, album.id) do
-            -# .album__picture
             = image_tag album.pictures[0].image.to_s, class: "img-zoom"
             .album__title
               = "タイトル：#{album.title}"
             .album__date
               = "日付：#{album.date}"
     .swiper-pagination
-    .swiper-button-prev
-    .swiper-button-next
-    .swiper-scrollbar
   - else
     .display__albums-blank
       まだアルバムはありません

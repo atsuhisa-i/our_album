@@ -24,14 +24,14 @@ $(function() {
     },
 
   // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
 
   // And if we need_rollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+  //   scrollbar: {
+  //     el: '.swiper-scrollbar',
+  //   },
   })
 })
