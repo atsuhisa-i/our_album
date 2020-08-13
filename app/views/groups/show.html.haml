@@ -43,22 +43,22 @@
               = "タイトル：#{album.title}"
             .album__date
               = "日付：#{album.date}"
-    .swiper-pagination
+.swiper-pagination
+  -# - else
+  -#   .display__albums-blank
+  -#     まだアルバムはありません
+
+.display__albums-inner
+  - if @albums.present?
+    - @albums.each do |album|
+      .display__albums-content
+        = link_to group_album_path(@group, album.id), class: "album-content" do
+          .album__picture.hover-darken.inview
+            = image_tag album.pictures[0].image.to_s, size: '270x200', class: "img-zoom"
+          .album__title
+            = "タイトル：#{album.title}"
+          .album__date
+            = "日付：#{album.date}"
   - else
     .display__albums-blank
       まだアルバムはありません
-
--# .display__albums-inner
--#   - if @albums.present?
--#     - @albums.each do |album|
--#       .display__albums-content
--#         = link_to group_album_path(@group, album.id), class: "album-content" do
--#           .album__picture.hover-darken.inview
--#             = image_tag album.pictures[0].image.to_s, size: '220x150', class: "img-zoom"
--#           .album__title
--#             = "タイトル：#{album.title}"
--#           .album__date
--#             = "日付：#{album.date}"
--#   - else
--#     .display__albums-blank
--#       まだアルバムはありません

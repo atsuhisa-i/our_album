@@ -53,3 +53,12 @@
     }
   }
 }
+
+.swiper-pagination {
+  width: 100%;
+  height: 30px;
+  margin: 0 auto;
+  .swiper-pagination-bullet {
+    margin-right: 5px;
+  }
+}
